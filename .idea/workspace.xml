@@ -22,12 +22,12 @@
     &quot;assignee&quot;: &quot;Eldos106&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Eldos106/DZ1.git",
-    "accountId": "e73a6164-8186-4d41-b437-4ba044623ef2"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Eldos106/DZ1.git&quot;,
+    &quot;accountId&quot;: &quot;e73a6164-8186-4d41-b437-4ba044623ef2&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -139,7 +139,8 @@
       <workItem from="1743628351017" duration="347000" />
       <workItem from="1743946215926" duration="3000" />
       <workItem from="1743946243872" duration="65000" />
-      <workItem from="1743946419375" duration="346000" />
+      <workItem from="1743946419375" duration="1374000" />
+      <workItem from="1743947819316" duration="2345000" />
     </task>
     <servers />
   </component>

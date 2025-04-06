@@ -13,28 +13,12 @@ emailBtn.onclick = () => {
         emailResult.style.color ='red'
     }
 }
-const emailInput = document.querySelector('#gmail_input')
-const emailBtn = document.querySelector('#gmail_button')
-const emailResult = document.querySelector('#gmail_result')
-
-const regExs =  /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-
-emailBtn.onclick = () => {
-    if (regExs.test(emailInput.value)) {
-        emailResult.innerText = 'OK'
-        emailResult.style.color = 'green'
-    }else {
-        emailResult.innerText ='ERROR'
-        emailResult.style.color ='red'
-    }
-}
-
 const parentBlock = document.querySelector('.parent_block');
 const childBlock = document.querySelector('.child_block');
 
 let positionX = 0
 let positionY = 0
-let direction = 'right' // Направление движения
+let direction = 'right'
 
 const offWidth = parentBlock.offsetWidth - childBlock.offsetWidth
 const offHeight = parentBlock.offsetHeight - childBlock.offsetHeight
@@ -72,3 +56,37 @@ const moveBlock = () => {
 }
 
 moveBlock();
+
+const secondsEl = document.querySelector('#seconds')
+const startBtn = document.querySelector('#start')
+const stopBtn = document.querySelector('#stop')
+const resetBtn = document.querySelector('#reset')
+
+let counter = 0
+let inter
+let isRunning = false
+const startCount = () => {
+    if (!isRunning) {
+        inter = setInterval(() => {
+            counter++;
+            secondsEl.textContent = counter;
+        }, 1000);
+    }
+    isRunning = true
+}
+startBtn.onclick = () => startCount()
+
+const stopCount = () => {
+    isRunning = false
+    clearInterval(inter)
+};
+
+stopBtn.onclick = () => stopCount()
+
+const resetCount = () => {
+    stopCount()
+    counter = 0
+    secondsEl.textContent = counter
+};
+
+resetBtn.onclick = () => resetCount()
