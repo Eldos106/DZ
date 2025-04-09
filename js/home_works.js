@@ -90,3 +90,4 @@ const resetCount = () => {
 };
 
 resetBtn.onclick = () => resetCount()
+
