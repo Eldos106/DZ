@@ -1,23 +1,32 @@
-const showModal = document.querySelector('.modal')
-const modalClose = document.querySelector('.modal_close')
+const  modal = document.querySelector('.modal')
+const modalTrigger = document.querySelector('#btn-get')
+const modalCloseButton = document.querySelector('.modal_close')
 
 const openModal = () => {
-    showModal.style.display = "block"
+    modal.style.display = 'block'
     document.body.style.overflow = 'hidden'
 }
 
+const closeModal = () => {
+    modal.style.display = 'none'
+    document.body.style.overflow = ''
+}
 
-
-const scrollUp = () => {
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight) {
-        openModal()
-        window.removeEventListener('scroll', scrollUp)
+modalTrigger.onclick = openModal
+modalCloseButton.onclick = closeModal
+modal.onclick = (event) => {
+    if (event.target === modal) {
+        closeModal()
     }
 }
+const handleScroll = () => {
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight) {
+        openModal();
+        window.removeEventListener('scroll', handleScroll);
+    }
+};
 
-const closeModal = () => {
-    showModal.style.display = 'none'
-}
+window.addEventListener('scroll', handleScroll);
+setTimeout(function() {
+    document.querySelector('.modal').style.display = 'block';}, 10000);
 
-window.addEventListener('scroll', scrollUp)
-modalClose.onclick = () => closeModal()
