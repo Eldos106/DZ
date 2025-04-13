@@ -36,26 +36,3 @@ const showTadContent = (i = 0) => {
 }
 hideTabContent()
 showTadContent()
-
-tabItems.onclick = (event) => {
-    if (event.target.classList.contains('tab_content_item')) {
-        tabItem.forEach((item,i) => {
-            if (event.target === item) {
-                hideTabContent()
-                showTadContent(i)
-            }
-        })
-    }
-}
-
-const showSlide = () => {
-    setInterval(() => {
-        currentI++
-        if (currentI > block.length - 1) {
-            currentI = 0
-        }
-        hideTabContent()
-        showTadContent(currentI)
-    },3000)
-}
-showSlide()

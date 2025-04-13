@@ -11,7 +11,6 @@ const closeModal = () => {
     modal.style.display = 'none'
     document.body.style.overflow = ''
 }
-
 modalTrigger.onclick = openModal
 modalCloseButton.onclick = closeModal
 modal.onclick = (event) => {
@@ -28,5 +27,6 @@ const handleScroll = () => {
 
 window.addEventListener('scroll', handleScroll);
 setTimeout(function() {
-    document.querySelector('.modal').style.display = 'block';}, 10000);
+    document.querySelector('.modal').style.display = 'block';
+}, 10000);
 
