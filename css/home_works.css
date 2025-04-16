@@ -232,3 +232,42 @@
 .character-card p {
     color: #ffffff;
 }
+
+.cars {
+    background: var(--black);
+}
+
+.cars-list {
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.cars-card {
+    border: 2px solid var(--orange);
+    padding: 10px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.cars-photo {
+    width: 100%;
+    height: 250px;
+    border: 2px solid var(--orange);
+    margin: 0 auto;
+}
+
+.cars-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cars-card p {
+    color: rgba(227, 199, 18, 0.85);
+    font-size: 14px;
+}
