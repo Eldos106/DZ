@@ -3,30 +3,53 @@ const modalTrigger = document.querySelector('#btn-get')
 const modalCloseButton = document.querySelector('.modal_close')
 
 const openModal = () => {
-    modal.style.display = 'block'
-    document.body.style.overflow = 'hidden'
+    try {
+        modal.style.display = 'block'
+        document.body.style.overflow = 'hidden'
+    }catch (error) {
+        console.error(error)
+    }
+
 }
 
 const closeModal = () => {
-    modal.style.display = 'none'
-    document.body.style.overflow = ''
+    try {
+        modal.style.display = 'none'
+        document.body.style.overflow = ''
+    }catch (error) {
+        console.error(error)
+    }
+
 }
 modalTrigger.onclick = openModal
 modalCloseButton.onclick = closeModal
 modal.onclick = (event) => {
-    if (event.target === modal) {
-        closeModal()
+    try {
+         if (event.target === modal) {
+            closeModal()
+        }
+    }catch (error) {
+        console.error(error)
     }
 }
 const handleScroll = () => {
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight) {
-        openModal();
-        window.removeEventListener('scroll', handleScroll);
+    try {
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight) {
+            openModal();
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }catch (error) {
+        console.error(error)
     }
 };
 
 window.addEventListener('scroll', handleScroll);
-setTimeout(function() {
-    document.querySelector('.modal').style.display = 'block';
-}, 10000);
+try {
+    setTimeout(function() {
+        document.querySelector('.modal').style.display = 'block';
+    }, 10000);
+}catch (error) {
+    console.error(error)
+}
+
 
